@@ -14,16 +14,18 @@
     <v-list :dense="!showFullDrawer" class="scroller test">
       <div class="youtube-brand-header" v-if="videoIsPlaying">
         <v-list-item link class="px-5-5">
-          <v-list-item-icon>mdi-menu</v-list-item-icon>
+          <v-list-item-icon><v-icon>mdi-menu</v-icon></v-list-item-icon>
+          <v-list-item-content>
+            <img
+              src="../assets/YouTube-Logo.wine.svg"
+              alt="YouTube"
+              width="10"
+            />
+          </v-list-item-content>
         </v-list-item>
-        <v-list-item-content>
-          <img src="../assets/YouTube-Logo.wine.svg" alt="YouTube" width="50" />
-        </v-list-item-content>
-
-        <!-- <v-toolbar-title>Youtube</v-toolbar-title> -->
       </div>
 
-      <v-list-item-group multiple color="indigo">
+      <v-list-item-group multiple color="darken">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
@@ -54,12 +56,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
-      <v-divider />
+      <v-divider v-if="!showFullDrawer" />
 
-      <v-list-item-group multiple color="indigo">
+      <v-list-item-group multiple color="darken">
         <v-list-item>
           <v-list-item-icon>
-            <v-icon>mdi-youtube-subscription</v-icon>
+            <v-icon>mdi-play-box-multiple-outline</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -107,7 +109,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
-      <v-divider />
+      <v-divider v-if="!showFullDrawer" />
 
       <v-list-item-group v-if="!showFullDrawer" multiple color="dark">
         <v-list-item-title>Subscriptions</v-list-item-title>
@@ -151,7 +153,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
-      <v-divider />
+      <v-divider v-if="!showFullDrawer" />
 
       <v-list-item-group v-if="!showFullDrawer" multiple color="dark">
         <v-list-item-title>More</v-list-item-title>
@@ -205,7 +207,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
-      <v-divider />
+      <v-divider v-if="!showFullDrawer" />
 
       <v-list-item-group multiple color="dark">
         <v-list-item v-if="!showFullDrawer" link>
@@ -248,7 +250,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
-      <v-divider />
+      <v-divider v-if="!showFullDrawer" />
     </v-list>
 
     <v-list-item v-if="!showFullDrawer" class="d-flex flex-wrap">
@@ -416,14 +418,22 @@ export default {
       showFullDrawer: (state) => state.youtube.showFullDrawer,
     }),
 
-      showDrawer: {
-    get() {
-      return this.$store.state.youtube.showDrawer;
+    showDrawer: {
+      get() {
+        return this.$store.state.youtube.showDrawer;
+      },
+      set(value) {
+        this.$store.commit("toggleShowDrawer", value);
+      },
     },
-    set(value) {
-      this.$store.commit("toggleShowDrawer", value);
+    showFullDrawer: {
+      get() {
+        return this.$store.state.youtube.showFullDrawer;
+      },
+      set(value) {
+        this.$store.commit("toggleShowFullDrawer", value);
+      },
     },
-  },
   },
 };
 </script>

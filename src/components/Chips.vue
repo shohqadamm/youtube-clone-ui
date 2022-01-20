@@ -11,12 +11,11 @@
       md="8"
     >
       <v-sheet
-        elevation="10"
         class="py-4 px-1"
       >
         <v-chip-group
           multiple
-          active-class="primary--text"
+          active-class="darken--text"
         >
           <v-chip
             v-for="tag in tags"
@@ -46,15 +45,15 @@ export default {
         'Art',
         'Tech',
         'Creative Writing',
-         'Work',
-        'Home Improvement',
-        'Vacation',
-        'Food',
-        'Drawers',
-        'Shopping',
-        'Art',
-        'Tech',
-        'Creative Writing',
+         'asdf',
+        'asdf Improvement',
+        'ffs',
+        'vcxzv',
+        'Drawtrwewers',
+        'Shopphfging',
+        'Avcbnrt',
+        'Tejkjhch',
+        'Creafgdtive dfghWriting',
       ],
     }),
 }
