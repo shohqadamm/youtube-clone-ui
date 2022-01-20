@@ -51,11 +51,22 @@ export default {
     SearchBar
   },
 
-  data: ()=>({
-
+  data:()=>({
+      drawer: true,
+      // showFullDrawer: false
+    
   }),
 
- 
+    methods:{
+    onClick(){
+      if(this.videoIsPlaying){
+        this.$store.commit('toggleShowDrawer', !this.showDrawer)
+      }else{
+        this.$store.commit('toggleShowFullDrawer', !this.showDrawer)
+
+      }
+    }
+  }
   
 };
 </script>
