@@ -19,17 +19,12 @@
 <SearchBar />
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-video-plus</v-icon>
-      </v-btn>
+      
+<navbar-menu title="Upload" icon="mdi-upload-outline" headIcon="mdi-video-plus-outline"></navbar-menu>
+<navbar-menu headIcon="mdi-view-grid"></navbar-menu>
+<navbar-menu headIcon="mdi-bell"></navbar-menu>
+     
 
-
-  <v-btn icon>
-        <v-icon>mdi-view-grid</v-icon>
-      </v-btn>
-        <v-btn icon>
-        <v-icon>mdi-bell</v-icon>
-      </v-btn>
        <v-avatar
                   size="36px"
                 >
@@ -44,15 +39,19 @@
   </div>
 </template>
 <script>
+import NavbarMenu from './NavbarMenu.vue';
 import SearchBar from './SearchBar.vue';
 export default {
   name: "Navbar",
   components: {
-    SearchBar
+    SearchBar,
+    NavbarMenu
   },
 
   data:()=>({
       drawer: true,
+      toggler: true,
+
       // showFullDrawer: false
     
   }),

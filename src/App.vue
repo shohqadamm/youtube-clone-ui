@@ -1,8 +1,5 @@
 <template>
   <v-app>
-   
-
-
     <v-main>
       <router-view />
     </v-main>
@@ -19,12 +16,13 @@ export default {
 };
 </script>
 <style lang="scss">
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--v-primary-base); 
+  background: #333;
 }
  
 ::-webkit-scrollbar-thumb {
